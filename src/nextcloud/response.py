@@ -64,3 +64,28 @@ class OCSResponse(NextCloudResponse):
     def __repr__(self):
         is_ok_str = "OK" if self.is_ok else "Failed"
         return "<OCSResponse: Status: {}>".format(is_ok_str)
+
+
+class DeckResponse(NextCloudResponse):
+	""" Response class for Deck api methods """
+
+	def __init__(self, response, json_output=True, success_code=None):
+		self.raw = response
+		self.is_ok = None
+
+		if json_output:
+			try:
+				print(response)
+
+				self.full_data = response.json()
+                # currently no success code provided by used API endpoitn
+			except JSONDecodeError:
+				self.is_ok = False
+				self.data = {'message': 'Unable to parse JSON response'}
+		else:
+			#self.data = response.content.decode("UTF-8")
+			self.data = response.text
+
+	def __repr__(self):
+		is_ok_str = "OK" if self.is_ok else "Failed"
+		return "<OCSResponse: Status: {}>".format(is_ok_str)
