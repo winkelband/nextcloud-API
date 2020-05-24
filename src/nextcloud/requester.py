@@ -167,3 +167,11 @@ class WebDAVRequester(Requester):
         }
         res = requests.request("COPY", url=url, auth=self.auth_pk, headers=headers)
         return self.rtn(resp=res)
+
+
+class DeckRequester(Requester):
+	""" Requester for Deck API """
+
+	def rtn(self, resp):
+		return DeckResponse(response=resp,
+						   json_output=self.json_output, success_code=self.SUCCESS_CODE)
