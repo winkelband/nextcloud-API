@@ -1,9 +1,5 @@
 # NextCloud Python api
 
-[![Build Status](https://travis-ci.org/EnterpriseyIntranet/nextcloud-API.svg?branch=master)](https://travis-ci.org/EnterpriseyIntranet/nextcloud-API)
-[![Documentation Status](https://readthedocs.org/projects/nextcloud-api/badge/?version=latest)](https://nextcloud-api.readthedocs.io/en/latest/?badge=latest)
-[![codecov](https://codecov.io/gh/EnterpriseyIntranet/nextcloud-API/branch/master/graph/badge.svg)](https://codecov.io/gh/EnterpriseyIntranet/nextcloud-API)
-
 
 ## Overview
 
@@ -19,6 +15,8 @@ Tested with python 3.7, NextCloud 14.
 #### Which APIs does it support ?
 
 Check out the corresponding [nextcloud API documentation](https://nextcloud-api.readthedocs.io/en/latest/introduction.html#which-api-does-it-support) section.
+
+This fork added the [REST API](https://github.com/nextcloud/deck/blob/master/docs/API.md) for the Nextcloud App [Deck](https://github.com/nextcloud/deck/). So far only a few methods have been implemented.
 
 
 #### How do I use it?
