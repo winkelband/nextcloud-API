@@ -75,10 +75,8 @@ class DeckResponse(NextCloudResponse):
 
 		if json_output:
 			try:
-				print(response)
-
 				self.full_data = response.json()
-                # currently no success code provided by used API endpoitn
+                # currently no success code provided by used API endpoint
 			except JSONDecodeError:
 				self.is_ok = False
 				self.data = {'message': 'Unable to parse JSON response'}
